@@ -12,6 +12,7 @@ export const ContentContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  width: 50%;
   /* background-color: black; */
   justify-content: space-between;
 `;

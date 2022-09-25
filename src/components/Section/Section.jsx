@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 function Section({title, children}) {
     return (
         <SectionDiv>
-            <h1>{title}</h1>
+            <h2>{title}</h2>
             {children}
         </SectionDiv>
   )

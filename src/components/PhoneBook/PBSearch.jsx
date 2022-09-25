@@ -1,8 +1,10 @@
-import { Label } from 'components/styled-comp/styled'
+// import { Label } from 'components/styled-comp/styled'
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { setFilter } from 'redux/filterSlice'
 // import PropTypes from 'prop-types'
+import { Form  } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const PBSearch = () => {
   const dispatch = useDispatch()
@@ -10,16 +12,18 @@ const PBSearch = () => {
   return (
     <>
       {/* {array.length > 0 && */}
-        <Label>Find contacts by name
-            <input
-            type="text"
-            name="name"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
-            onChange={(e)=> dispatch(setFilter(e.currentTarget.value))} 
-            />
-        </Label>
+      <Form.Group className='mb-3'>
+        <Form.Label>Find contacts by name
+              <Form.Control
+              type="text"
+              name="name"
+              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+              required
+              onChange={(e)=> dispatch(setFilter(e.currentTarget.value))} 
+              />
+          </Form.Label>
+        </Form.Group>
       {/* } */}
     </>
   )

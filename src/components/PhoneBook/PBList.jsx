@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import ListGroup from 'react-bootstrap/ListGroup';
 
 const List = ({ array = [], del }) => {
   return (
-      <ul>
-        {array.length !== 0 ? array.map(item => <li key={item.id}>{item.name}: {item.number} <button onClick={() => del(item.id)} type='click'>delete</button></li>) : <li>Havent contacts to show</li>}
-      </ul>
+      <ListGroup as="ol" numbered>
+        {array.length !== 0 ? array.map(item => <ListGroup.Item as="li" key={item.id}>{item.name}: {item.number} <button onClick={() => del(item.id)} type='click'>delete</button></ListGroup.Item>) : <li>Havent contacts to show</li>}
+      </ListGroup>
   )
 }
 

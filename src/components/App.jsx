@@ -23,7 +23,10 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />} >
-        <Route index element={<Home />} />
+        <Route index element={
+          <PublicR>
+            <Home />
+          </PublicR>}/>
         <Route
             path="signup"
             element={
