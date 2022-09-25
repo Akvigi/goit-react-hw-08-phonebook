@@ -1,7 +1,8 @@
 import React from 'react'
-import { Form, Label } from 'components/styled-comp/styled'
+// import { Form, Label } from 'components/styled-comp/styled'
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import { Form, Button } from 'react-bootstrap';
 
 
 export const SLForm = ({text, toDo}) => {
@@ -59,8 +60,8 @@ const navigate = useNavigate();
       <Form
            onSubmit={(e) => onSubmit(e, user)}
       >
-          {text === "Sign up" && <Label>Name
-            <input
+          {text === "Sign up" && <Form.Group className="mb-3" controlId="formBasicName"><Form.Label>Name
+            <Form.Control
               type="text"
               name="name"
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -68,24 +69,29 @@ const navigate = useNavigate();
               required
               value={name}
               onChange={(e) => setName(e.currentTarget.value)} />
-          </Label>}
-      <Label>Email
-            <input
-              type="text"
-              name="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.currentTarget.value)} />
-          </Label>
-          <Label>Password
-            <input
+            </Form.Label>
+      </Form.Group>}
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Email
+              <Form.Control
+                type="text"
+                name="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.currentTarget.value)} />
+        </Form.Label>
+      </Form.Group>
+       <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Password
+            <Form.Control
             type="password"
             name="password"
             required
             value={password}
             onChange={(e) => setPassword(e.currentTarget.value)}/>
-          </Label>
-          <button type="submit">{text}</button>
+          </Form.Label>
+      </Form.Group>
+          <Button variant="primary" type="submit" >{text}</Button>
         </Form>
   )
 }

@@ -38,7 +38,7 @@ export const SharedLayout = () => {
           <Navbar.Brand href="/goit-react-hw-08-phonebook">Site</Navbar.Brand>
             <Nav className="me-auto" variant="pills">
               {!auth.isLogin && <Nav.Item>
-                <Nav.Link href="/goit-react-hw-08-phonebook/home">Home</Nav.Link>
+                <Nav.Link href="/goit-react-hw-08-phonebook">Home</Nav.Link>
               </Nav.Item>}
                 {auth.isLogin && (
                   <Nav.Item>
